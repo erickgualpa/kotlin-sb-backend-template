@@ -1,6 +1,6 @@
 package org.egualpam.contexts.template.kotlinsb.shared.application.domain
 
-abstract class AggregateRoot {
+abstract class AggregateRoot(private val aggregateId: AggregateId) {
 
   protected val domainEvents = mutableSetOf<DomainEvent>()
 
@@ -10,7 +10,7 @@ abstract class AggregateRoot {
     return domainEventsCopy
   }
 
-  abstract fun getId(): AggregateId
+  fun id(): AggregateId = this.aggregateId
 
   override fun equals(other: Any?): Boolean {
     if (this === other) return true
@@ -18,10 +18,10 @@ abstract class AggregateRoot {
 
     other as AggregateRoot
 
-    return getId() == other.getId()
+    return id() == other.id()
   }
 
   override fun hashCode(): Int {
-    return getId().hashCode()
+    return id().hashCode()
   }
 }

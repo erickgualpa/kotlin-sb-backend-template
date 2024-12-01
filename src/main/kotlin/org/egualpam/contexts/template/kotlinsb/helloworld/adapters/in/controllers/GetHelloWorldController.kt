@@ -1,33 +1,34 @@
-package org.egualpam.contexts.template.kotlinsb.example.adapters.`in`.controllers
+package org.egualpam.contexts.template.kotlinsb.helloworld.adapters.`in`.controllers
 
-import org.egualpam.contexts.template.kotlinsb.example.application.usecases.command.CreateHelloWorld
-import org.egualpam.contexts.template.kotlinsb.example.application.usecases.command.CreateHelloWorldCommand
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.query.RetrieveHelloWorld
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.query.RetrieveHelloWorldQuery
 import org.egualpam.contexts.template.kotlinsb.shared.application.domain.exceptions.InvalidAggregateId
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory.getLogger
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.internalServerError
-import org.springframework.http.ResponseEntity.noContent
 import org.springframework.http.ResponseEntity.notFound
+import org.springframework.http.ResponseEntity.ok
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RequestMapping("/v1/hello-world")
 @RestController
-class PutHelloWorldController(
-  val createHelloWorld: CreateHelloWorld
+class GetHelloWorldController(
+  val retrieveHelloWorld: RetrieveHelloWorld
 ) {
 
   private val logger: Logger = getLogger(this::class.java)
 
-  @PutMapping("/{id}")
-  fun putHelloWorld(@PathVariable id: String): ResponseEntity<Unit> {
+  @GetMapping("/{id}")
+  fun getHelloWorld(@PathVariable id: String): ResponseEntity<GetHelloWorldResponse> {
     return try {
-      val command = CreateHelloWorldCommand(id)
-      createHelloWorld.execute(command)
-      noContent().build()
+      val query = RetrieveHelloWorldQuery(id)
+      val helloWorld = retrieveHelloWorld.execute(query)
+      val response = GetHelloWorldResponse(helloWorld.id)
+      ok(response)
     } catch (e: RuntimeException) {
       return when (e.javaClass) {
         InvalidAggregateId::class.java -> {
@@ -36,10 +37,14 @@ class PutHelloWorldController(
         }
 
         else -> {
-          logger.error("Unexpected error processing request:", e)
+          logger.error("Unexpected error processing request: ", e)
           internalServerError().build()
         }
       }
     }
   }
+
+  data class GetHelloWorldResponse(
+    val id: String
+  )
 }

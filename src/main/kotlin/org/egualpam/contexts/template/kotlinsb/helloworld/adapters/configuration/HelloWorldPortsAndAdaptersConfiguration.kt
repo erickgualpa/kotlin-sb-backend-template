@@ -1,8 +1,8 @@
-package org.egualpam.contexts.template.kotlinsb.example.adapters.configuration
+package org.egualpam.contexts.template.kotlinsb.helloworld.adapters.configuration
 
-import org.egualpam.contexts.template.kotlinsb.example.application.domain.HelloWorldId
-import org.egualpam.contexts.template.kotlinsb.example.application.ports.out.HelloWorldSearchRepository
-import org.egualpam.contexts.template.kotlinsb.example.application.usecases.query.HelloWorldDto
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.domain.HelloWorldId
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.ports.out.HelloWorldSearchRepository
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.query.HelloWorldDto
 import org.egualpam.contexts.template.kotlinsb.shared.application.domain.DomainEvent
 import org.egualpam.contexts.template.kotlinsb.shared.application.ports.out.EventBus
 import org.slf4j.Logger

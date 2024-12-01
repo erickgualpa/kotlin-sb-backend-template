@@ -1,4 +1,4 @@
-package org.egualpam.contexts.template.kotlinsb.example.application.domain
+package org.egualpam.contexts.template.kotlinsb.helloworld.application.domain
 
 import org.egualpam.contexts.template.kotlinsb.shared.application.domain.AggregateId
 

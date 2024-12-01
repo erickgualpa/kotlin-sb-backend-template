@@ -1,4 +1,4 @@
-package org.egualpam.contexts.template.kotlinsb.example.application.usecases.command
+package org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.command
 
 import org.junit.jupiter.api.Test
 import java.util.UUID.randomUUID

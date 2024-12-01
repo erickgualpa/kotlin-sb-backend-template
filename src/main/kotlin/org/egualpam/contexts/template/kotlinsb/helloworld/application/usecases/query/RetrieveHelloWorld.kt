@@ -1,7 +1,7 @@
-package org.egualpam.contexts.template.kotlinsb.example.application.usecases.query
+package org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.query
 
-import org.egualpam.contexts.template.kotlinsb.example.application.domain.HelloWorldId
-import org.egualpam.contexts.template.kotlinsb.example.application.ports.out.HelloWorldSearchRepository
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.domain.HelloWorldId
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.ports.out.HelloWorldSearchRepository
 
 class RetrieveHelloWorld(
   private val repository: HelloWorldSearchRepository

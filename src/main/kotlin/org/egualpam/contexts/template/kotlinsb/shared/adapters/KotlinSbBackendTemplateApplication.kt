@@ -6,8 +6,8 @@ import org.springframework.boot.runApplication
 @SpringBootApplication(
     scanBasePackages = [
       "org.egualpam.contexts.template.kotlinsb.shared.adapters.configuration",
-      "org.egualpam.contexts.template.kotlinsb.example.adapters.configuration",
-      "org.egualpam.contexts.template.kotlinsb.example.adapters.in.controllers",
+      "org.egualpam.contexts.template.kotlinsb.helloworld.adapters.configuration",
+      "org.egualpam.contexts.template.kotlinsb.helloworld.adapters.in.controllers",
     ],
 )
 class KotlinSbBackendTemplateApplication

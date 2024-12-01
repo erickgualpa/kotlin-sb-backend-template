@@ -1,8 +1,8 @@
-package org.egualpam.contexts.template.kotlinsb.example.application.usecases.query
+package org.egualpam.contexts.template.kotlinsb.helloworld.application.usecases.query
 
 import org.assertj.core.api.Assertions.assertThat
-import org.egualpam.contexts.template.kotlinsb.example.application.domain.HelloWorldId
-import org.egualpam.contexts.template.kotlinsb.example.application.ports.out.HelloWorldSearchRepository
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.domain.HelloWorldId
+import org.egualpam.contexts.template.kotlinsb.helloworld.application.ports.out.HelloWorldSearchRepository
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock

@@ -18,4 +18,53 @@ https://alistair.cockburn.us/hexagonal-architecture
 [//]: # (Directory tree below was generated using 'tree -d -I target' command)
 
 ```
+.
+└── src
+    ├── main
+    │   ├── kotlin
+    │   │   └── org
+    │   │       └── egualpam
+    │   │           └── contexts
+    │   │               └── template
+    │   │                   └── kotlinsb
+    │   │                       ├── helloworld
+    │   │                       │   ├── adapters
+    │   │                       │   │   ├── configuration
+    │   │                       │   │   └── in
+    │   │                       │   │       └── controllers
+    │   │                       │   └── application
+    │   │                       │       ├── domain
+    │   │                       │       ├── ports
+    │   │                       │       │   └── out
+    │   │                       │       └── usecases
+    │   │                       │           ├── command
+    │   │                       │           └── query
+    │   │                       └── shared
+    │   │                           ├── adapters
+    │   │                           │   └── configuration
+    │   │                           └── application
+    │   │                               ├── domain
+    │   │                               │   └── exceptions
+    │   │                               └── ports
+    │   │                                   └── out
+    │   └── resources
+    └── test
+        ├── kotlin
+        │   └── org
+        │       └── egualpam
+        │           └── contexts
+        │               └── template
+        │                   └── kotlinsb
+        │                       ├── architecture
+        │                       ├── e2e
+        │                       ├── health
+        │                       ├── helloworld
+        │                       │   └── application
+        │                       │       └── usecases
+        │                       │           ├── command
+        │                       │           └── query
+        │                       ├── journey
+        │                       └── shared
+        │                           └── adapters
+        └── resources
 ```

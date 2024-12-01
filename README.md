@@ -1,4 +1,4 @@
-# Kotlin + Spring Boot backend template
+# 🥬 Kotlin + Spring Boot backend template 🖍️
 
 ![CI/CD status](https://github.com/erickgualpa/kotlin-sb-backend-template/actions/workflows/maven.yml/badge.svg)
 [![](https://img.shields.io/badge/Spring%20Boot%20Version-3.3.4-blue)](/pom.xml)

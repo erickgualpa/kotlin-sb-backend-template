@@ -2,7 +2,11 @@ package org.egualpam.contexts.template.kotlinsb.shared.application.domain
 
 abstract class AggregateRoot(private val aggregateId: AggregateId) {
 
-  protected val domainEvents = mutableSetOf<DomainEvent>()
+  private val domainEvents = mutableSetOf<DomainEvent>()
+
+  fun addDomainEvent(domainEvent: DomainEvent) {
+    domainEvents.add(domainEvent)
+  }
 
   fun pullDomainEvents(): Set<DomainEvent> {
     val domainEventsCopy = HashSet(domainEvents)

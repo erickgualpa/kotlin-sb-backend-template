@@ -2,10 +2,14 @@ package org.egualpam.contexts.template.kotlinsb.shared.application.domain;
 
 import java.time.Instant
 
-abstract class DomainEvent(private val aggregateRoot: AggregateRoot) {
-  abstract fun id(): DomainEventId
+abstract class DomainEvent(
+  private val domainEventId: DomainEventId,
+  private val occurredOn: Instant,
+  private val aggregateRoot: AggregateRoot,
+) {
+  fun id() = domainEventId
 
-  abstract fun occurredOn(): Instant
+  fun occurredOn() = occurredOn
 
   override fun equals(other: Any?): Boolean {
     if (this === other) return true
